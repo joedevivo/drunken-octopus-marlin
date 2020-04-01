@@ -601,6 +601,7 @@ namespace Language_en {
   PROGMEM Language_Str MSG_BACKLASH_C                      = LCD_STR_C;
   PROGMEM Language_Str MSG_BACKLASH_CORRECTION             = _UxGT("Correction");
   PROGMEM Language_Str MSG_BACKLASH_SMOOTHING              = _UxGT("Smoothing");
+  PROGMEM Language_Str MSG_PRINT_FINISHED                  = _UxGT("Print finished");
 }
 
 #if FAN_COUNT == 1
