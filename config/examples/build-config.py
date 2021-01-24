@@ -251,6 +251,7 @@ def make_config(PRINTER, TOOLHEAD):
         MARLIN["BAUDRATE"]                               = 250000
         MARLIN["MACHINE_UUID"]                           = C_STRING("c3255c96-4097-4884-8ed0-ded2ff9bae61")
         MARLIN["SDSUPPORT"]                              = True
+        MARLIN["NOZZLE_TO_PROBE_OFFSET"]                 = [-3, -48, -3.05]
         if USE_ARCHIM2:
             MARLIN["STEALTHCHOP_XY"]                     = False
             MARLIN["STEALTHCHOP_Z"]                      = True
@@ -261,6 +262,7 @@ def make_config(PRINTER, TOOLHEAD):
     if "Juniper_TAZ5" in PRINTER:
         IS_TAZ                                           = True
         TAZ_BED                                          = True
+        USE_TWO_PIECE_BED                                = True
         USE_Z_SCREW                                      = True
         USE_NORMALLY_OPEN_ENDSTOPS                       = True
         USE_MIN_ENDSTOPS                                 = True
@@ -1004,6 +1006,8 @@ def make_config(PRINTER, TOOLHEAD):
         MARLIN["X_MAX_ENDSTOP_INVERTING"]                = NORMALLY_CLOSED_ENDSTOP
         if not MARLIN["BLTOUCH"]:
           MARLIN["NOZZLE_TO_PROBE_OFFSET"]               = [0, 0, -1.24]
+        else:
+          MARLIN["NOZZLE_TO_PROBE_OFFSET"]               = [-6, -50, -3.05]
         MARLIN["DEFAULT_NOMINAL_FILAMENT_DIA"]           = 3.0
 
     if TOOLHEAD in ["BandedTiger_HardenedSteel"]:
